@@ -1,0 +1,19 @@
+{
+  "name": "solidity-test",
+  "version": "0.1.0",
+  "description": "A basic environment to test solidity development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity"
+  ],
+  "author": "Edgar Barrantes",
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.4.13",
+    "web3": "^0.20.1"
+  }
+}
