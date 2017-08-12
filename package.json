@@ -2,18 +2,26 @@
   "name": "solidity-test",
   "version": "0.1.0",
   "description": "A basic environment to test solidity development.",
-  "main": "index.js",
+  "main": "contracts/SendAndReceive.sol",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test"
   },
   "keywords": [
     "ethereum",
     "solidity"
   ],
   "author": "Edgar Barrantes",
-  "license": "ISC",
-  "dependencies": {
-    "solc": "^0.4.13",
-    "web3": "^0.20.1"
+  "url": "https://edgarbarrantes.com/",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdgarBarrantes/solidity-test.git"
+  },
+  "engines": {
+    "node": ">=6.11.1"
+  },
+  "devDependencies": {
+    "ethereumjs-testrpc": "^3.0.5",
+    "truffle": "^3.2.5"
   }
 }
