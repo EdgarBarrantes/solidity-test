@@ -11,23 +11,28 @@ contract SendAndReceive is MortalContract{
     owner = msg.sender;
   }
 
-  function sendToContract() {
+  function sum(uint a, uint b) returns (uint){
+    return a + b;
+  }
+
+  function sendToContract() payable {
     require(msg.value > 0);
     eth += msg.value;
     contributedEth[msg.sender] = contributedEth[msg.sender] + msg.value;
   }
 
-  function howMuchDidIGaveyYou(address _account) returns (uint) {
-    return contributedEth[_account];
+  function howMuchDidIGaveyYou() returns (uint) {
+    return contributedEth[msg.sender];
   }
 
-  function receive(uint256 _value) justOwner{
+  function receive(uint _value) justOwner{
     require(_value <= this.balance);
-    owner.transfer(_value);
+    owner.transfer(_value * 1000000000000000000);
+    contributedEth[owner] = contributedEth[owner] - msg.value;
   }
 
   function utterMistake(uint256 _value) {
     require(_value <= this.balance);
-    msg.sender.transfer(_value);
+    msg.sender.transfer(_value * 1000000000000000000);
   }
 }

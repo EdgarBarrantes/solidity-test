@@ -8,12 +8,11 @@ contract MortalContract {
   }
 
   modifier justOwner {
-    require(msg.sender != owner);
+    require(msg.sender == owner);
     _;
   }
 
   function kill() justOwner{
     suicide(owner);
   }
-
 }
